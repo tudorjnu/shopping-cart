@@ -8,9 +8,9 @@ The purpose of the project is to solidify the routing components and testing. Th
 - Styling
 - Routing
 
-## 🛠️Built With
+## 🛠️ Built With
 
 - React Router
 - PropTypes
 
-## 🔍Challenges
+## 🔍 Challenges
