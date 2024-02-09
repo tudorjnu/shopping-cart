@@ -1,7 +1,7 @@
-import NavigationBar from "./components/navigation-bar";
-import styles from "./App.module.scss";
+import NavigationBar from "../components/navigation-bar";
+import styles from "./home.module.scss";
 
-function App() {
+function Home() {
   return (
     <>
       <NavigationBar />
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
