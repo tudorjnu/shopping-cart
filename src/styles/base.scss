@@ -3,8 +3,13 @@
   background-color: #f5f5f5;
 }
 
+#root {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
 body {
   margin: 0;
-  display: grid;
-  grid-template-rows: 2rem 1fr;
 }

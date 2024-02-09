@@ -5,7 +5,10 @@ function App() {
   return (
     <>
       <NavigationBar />
-      <div className={styles.main}>Main Things go here</div>
+      <div className={styles.main}>
+        <h1>Welcome to the store!</h1>
+        <button className={styles.button}>Click me</button>
+      </div>
     </>
   );
 }
