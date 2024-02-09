@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <NavigationBar />
-      <div className={styles.main}>App</div>
+      <div className={styles.main}>Main Things go here</div>
     </>
   );
 }
