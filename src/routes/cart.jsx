@@ -1,14 +1,17 @@
-import styles from "./home.module.scss";
+import styles from "./cart.module.scss";
 import { useEffect, useState } from "react";
 
-function Item({ title, price }) {
+function Item({ title, price, image }) {
   console.log(title);
   console.log(price);
   return (
-    <>
-      <div>{title}</div>
-      <div>{price}</div>
-    </>
+    <div className={styles.productCard}>
+      <p>{title}</p>
+      <p>{price}</p>
+      <div className={styles.imageContainer}>
+        <img src={image} className={styles.img} />
+      </div>
+    </div>
   );
 }
 
@@ -32,6 +35,7 @@ function useProducts() {
 
   return { products, error, loading };
 }
+
 function Cart() {
   const { products, error, loading } = useProducts();
 
@@ -39,10 +43,9 @@ function Cart() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <>
-      Hello from the Cart Page
+    <div className="productsContainer">
       <Item {...products[0]} />
-    </>
+    </div>
   );
 }
 
