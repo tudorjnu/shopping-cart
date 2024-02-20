@@ -1,7 +1,8 @@
-import styles from "./cart.module.scss";
+import { Link } from "react-router-dom";
+import styles from "./products.module.scss";
 import { useEffect, useState } from "react";
 
-function Item({ title, price, image }) {
+function Item({ title, price, image, id }) {
   return (
     <div className={styles.productCard}>
       <div className={styles.imageContainer}>
@@ -9,10 +10,7 @@ function Item({ title, price, image }) {
       </div>
       <p>{title}</p>
       <p>{price}</p>
-      <div className={styles.buttonsContainer}>
-        <input type="number" min="1" max="10" step="1" />
-        <button>Add to cart</button>
-      </div>
+      <Link to={`/products/${id}`}>Add to cart</Link>
     </div>
   );
 }
@@ -38,7 +36,7 @@ function useProducts() {
   return { products, error, loading };
 }
 
-function Cart() {
+function Products() {
   const { products, error, loading } = useProducts();
 
   if (error) return <p>an error has been encountered</p>;
@@ -55,4 +53,26 @@ function Cart() {
   );
 }
 
-export default Cart;
+import { useParams } from "react-router-dom";
+import { getProduct } from "../lib/actions";
+
+export function Product() {
+  const { productId } = useParams();
+  const { product, setProduct } = useState(null);
+
+  useEffect(() => {
+    getProduct(productId).then(setProduct);
+  }, [productId]);
+
+  return (
+    <div className={styles.productCard}>
+      <div className={styles.imageContainer}>
+        <img src={product.image} className={styles.img} />
+      </div>
+      <p>{product.title}</p>
+      <p>{product.price}</p>
+    </div>
+  );
+}
+
+export default Products;

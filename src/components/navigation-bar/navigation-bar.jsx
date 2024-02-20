@@ -5,7 +5,8 @@ function NavigationBar() {
   return (
     <div className={styles.navbar}>
       <Link to="/">Home</Link>
-      <Link to="/cart">Shopping Cart</Link>
+      <Link to="/products">Products</Link>
+      <Link to="/products">Shopping Cart</Link>
     </div>
   );
 }

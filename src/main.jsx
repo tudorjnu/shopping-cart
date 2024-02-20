@@ -13,7 +13,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import Home from "./routes/home";
 import ErrorPage from "./error-page";
 import Root from "./routes/root";
-import Cart from "./routes/cart";
+import Products, { Product } from "./routes/products";
 
 library.add(fas, fab);
 
@@ -28,8 +28,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        element: <Cart />,
-        path: "/cart",
+        element: <Products />,
+        path: "/products",
+      },
+      {
+        element: <Product />,
+        path: "/products/:productId",
       },
     ],
   },
