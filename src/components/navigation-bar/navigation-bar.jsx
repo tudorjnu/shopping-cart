@@ -1,12 +1,12 @@
 import styles from "./navigation-bar.module.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavigationBar() {
   return (
     <div className={styles.navbar}>
-      <Link to="/">Home</Link>
-      <Link to="/products">Products</Link>
-      <Link to="/products">Shopping Cart</Link>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/products">Products</NavLink>
+      <NavLink to="/cart">Shopping Cart</NavLink>
     </div>
   );
 }

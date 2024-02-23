@@ -14,6 +14,7 @@ import Home from "./routes/home";
 import ErrorPage from "./error-page";
 import Root from "./routes/root";
 import Products, { Product } from "./routes/products";
+import Cart from "./routes/cart";
 
 library.add(fas, fab);
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         element: <Product />,
         path: "/products/:productId",
+      },
+      {
+        element: <Cart />,
+        path: "/cart",
       },
     ],
   },
